@@ -1,0 +1,323 @@
+== JS for server quiz
+[Basic JS]
+This is the statement for problem group one.
+At ||LINK: https://www.w3schools.com/js/default.asp||
+
+Which js statement are true
+||CODE:java:
+var x, y, z; //A
+||
+||CODE:java:
+x = 5; //B
+||
+||CODE:java:
+y = 6; //C
+||
+||CODE:java:
+z = x+y; //D
+||
+||CODE:java:
+x*y = 5; //E
+||
+*= A
+*= B
+*= C
+*= D
+* E:: wtf is this
+
+Which are true:
+||CODE:java:
+var person = "Hege";
+var person="Hege"; // A
+||
+||CODE:java:
+function myFunction() { //B
+  document.getElementById("demo1").innerHTML = "Hello Dolly!";
+  document.getElementById("demo2").innerHTML = "How are you?";
+}
+||
+||CODE:java:
+//The variables lastName and lastname, are two different variables:
+var lastname, lastName; //C
+lastName = "Doe";
+lastname = "Peterson";
+||
+*= Semicolons separate JavaScript statements.
+*= When separated by semicolons, multiple statements on one line are allowed:
+*= Both statements in A are equivalent. JS ignores spaces.
+*= B is how to define a function.
+* You can't have a function return value in JS.
+* JS is a strong type language.
+*= Code after double slashes // or between /* and */ is treated as a comment.
+*= In JavaScript, the first character must be a letter, or an underscore (_), or a dollar sign ($).
+*= C is true.
+*= The "equal to" operator is written like == in JavaScript.
+
+The general rules for constructing names for variables:
+*= Names can contain letters, digits, underscores, and dollar signs.
+*= Names must begin with a letter
+*= Names can also begin with $ and _ (but we will not use it in this tutorial)
+*= Names are case sensitive (y and Y are different variables)
+*= Reserved words (like JavaScript keywords) cannot be used as names
+* Name cant start with number.
+* Name can start with special character.
+
+Which are true about JavaScript Data Types:
+||CODE:java:
+var person = "John Doe", carName = "Volvo", price = 200; //A
+||
+*= Strings are written inside double or single quotes. Numbers are written without quotes.
+*= If you put a number in quotes, it will be treated as a text string.
+* JS is a strong type language.
+* There is no primitive data type in JS. :: Haha the best BS statement
+*= A is true to declare many variables in one statement.
+*= A variable declared without a value will have the value undefined.
+*= If you re-declare a JavaScript variable, it will not lose its value.
+
+Which are true about arithmetic with JavaScript variables:
+||CODE:java:
+var x = "John" + " " + "Doe"; //A
+||
+||CODE:java:
+var x = 5 + 2 + 3;//B
+||
+||CODE:java:
+var x = "5" + 2 + 3;//C
+||
+*= A is true.
+*= B is true.
+* C is wrong since can't add a string with an integer.
+* C result is an integer value 55.
+*= C output is 523.
+
+What are true about JavaScript Operators
+*= The exponentiation operator (**) raises the first operand to the power of the second operand.  produces the same result as Math.pow(x,y). Introduced in ES2016.
+* The exponentiation operator (**) is stable and should be use on any browser.
+* '**' operator is not valid in JS.
+*= The + operator can also be used to add (concatenate) strings.
+*= adding a number and a string will return a string.
+*= '===' mean equal value and equal type
+*= typeof returns the type of a variable.
+*= instanceof returns true if an object is an instance of an object type.
+* You must implement an api to add a string since anything with js is an object.
+*= The numbers (in an arithmetic operation) are called operands.
+*= The operation (to be performed between the two operands) is defined by an operator.
+*= Operator precedence describes the order in which operations are performed in an arithmetic expression.
+
+Which are true about JavaScript Data Types:
+||CODE:java:
+// A
+var length = 16;                               // Number
+var lastName = "Johnson";                      // String
+var x = {firstName:"John", lastName:"Doe"};    // Object
+||
+||CODE:java:
+// B
+var cars = ["Saab", "Volvo", "BMW"];
+||
+||CODE:java:
+// C
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+||
+*= A is true. JavaScript variables can hold many data types: numbers, strings, objects and more.
+*= When adding a number and a string, JavaScript will treat the number as a string.
+*= JavaScript has dynamic types. This means that the same variable can be used to hold different data types.
+*= You can use quotes inside a string, as long as they don't match the quotes surrounding the string.
+* You can't use quotes inside a string
+*= B  declares (creates) an array called cars, containing three items (car names)
+*= JavaScript objects are written with curly braces {}. Object properties are written as name:value pairs, separated by commas like C.
+* JS object require a class
+*= The typeof operator returns the type of a variable or an expression.
+*= In JavaScript, a variable without a value, has the value undefined. The type is also undefined.
+* In JavaScript, a variable without a value, has the value null. The type is also null.
+*= An empty string has both a legal value and a type.
+*= the data type of null is an object. You can also empty an object by setting it to undefined
+
+Difference Between Undefined and Null?
+||CODE:java:
+typeof undefined           // undefined A
+typeof null                // object  B
+null === undefined         // false  C
+null == undefined          // true   D
+||
+*= undefined and null are equal in value but different in type
+*= ABCD is true.
+* A is wrong rest are true
+* B is wrong rest are true
+* CD are wrong rest are true
+
+What are true about JS Data
+||CODE:java:
+typeof {name:'John', age:34} // Returns "object" //A
+typeof [1,2,3,4]             // Returns "object"  //B
+typeof null                  // Returns "object" //C
+typeof function myFunc(){}   // Returns "function" //D
+||
+*= 4 types: string number boolean undefined
+* 4 types: string integer boolean undefined
+* 5 types: string integer float boolean undefined
+*= typeof operator can return one of two complex types: function object
+*= ABCD are true
+* B is wrong since it must B array.
+
+What are true about function:
+||CODE:java:
+//A
+function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+}
+||
+*= A defince a function with the function keyword, followed by a name, followed by parentheses ().
+*= A function will be called When an event occurs (when a user clicks a button),When it is invoked (called) from JavaScript code,Automatically (self invoked)
+* A function in JS always is void type.
+*= The () Operator Invokes the Function. Accessing a function without () will return the function definition instead of the function result.
+* Accessing a function without () will return an error from compiler.
+*= Variables declared within a JavaScript function, become LOCAL to the function.
+
+What are true about object
+||CODE:java:
+//A
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+||
+||CODE:java:
+//B
+objectName.propertyName
+//or
+objectName["propertyName"] //B2
+||
+||CODE:java:
+//C
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+||
+||CODE:java:
+//D
+objectName.methodName();
+||
+*= You define (and create) a JavaScript object with an object literal like A.
+*= The name:values pairs in JavaScript objects are called properties
+*= You can access object properties in two ways like B
+* B2 is wrong because it is how to access array
+*= Objects can also have methods. Methods are actions that can be performed on objects like C.
+*= Access to function like D
+* D is wrong because it is not clear. You can access array the same way.
+*= When a JavaScript variable is declared with the keyword "new", the variable is created as an object
+*= Comparing two JavaScript objects will always return false.
+
+What are true about js string
+*= You can use single or double quotes
+*= To find the length of a string, use the built-in length property
+* To find the length of a string, use the built-in length() function
+* To find the length of a string, use the built-in size property
+
+Which character need Escape Character:
+*= '
+*= "
+*= \
+* None of the mentioned.
+
+Which are valid escape in JS:
+*= \b	Backspace
+*= \f	Form Feed
+*= \n	New Line
+*= \r	Carriage Return
+*= \t	Horizontal Tabulator
+*= \v	Vertical Tabulator
+* \d Delete
+* \t Tranfer
+* \e escape
+
+Give you this
+||CODE:java:
+var x = "John";
+var y = new String("John");
+||
+*= (x === y) is false because x and y have different types (string and object)
+*= (x == y) is true because x and y have equal values
+* (x === y) is true because js auto cast value.
+* (x == y) is false because js not auto get value from an object.
+
+What are true about string method
+||CODE:java:
+//A
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+||
+||CODE:java:
+//B
+str = "Please visit Microsoft!";
+var n = str.replace(/MICROSOFT/i, "W3Schools");
+||
+||CODE:java:
+//C
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace(/Microsoft/g, "W3Schools");
+||
+||CODE:java:
+//D
+var txt = "Hello";       // String
+txt.split("");           // Split in characters
+||
+*= The length property returns the length of a string
+*= indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string like A
+*= The search() method searches a string for a specified value and returns the position of the match
+* search() and indexOf() are equal
+*= The search() method cannot take a second start position argument but can take regex.
+*= The replace() method replaces a specified value with another value in a string:
+* By default, the replace() method replaces all matches
+*= By default, the replace() method is case sensitive
+*= To replace case insensitive, use a regular expression with an /i flag (insensitive) like B
+*= To replace all matches, use a regular expression with a /g flag like C
+*= All string methods return a new string. They don't modify the original string.
+* Strings are mutable
+*= The trim() method removes whitespace from both sides of a string
+* charAt(0) and str[0] are perfectly the same ::Property access might be a little unpredictable: It does not work in Internet Explorer 7 or earlier,It makes strings look like arrays (but they are not),If no character is found, [ ] returns undefined, while charAt() returns an empty string. It is read only. str[0] = "A" gives no error (but does not work!)
+*= A string can be converted to an array with the split() method like D
+
+What are true about js number
+||CODE:java:
+//A
+var x = "100";
+var y = "10";
+var z = x * y;       // z will be 1000
+||
+||CODE:java:
+//B
+var x = "100";
+var y = "10";
+var z = x + y;
+||
+*= JavaScript Numbers are Always 64-bit Floating Point
+* JavaScript strings can't have numeric content
+* A is wrong since can't multiply string
+* B result is 110 :: it add 2 string so will be 10010
+*= NaN is a JavaScript reserved word indicating that a number is not a legal number.
+*= You can use the global JavaScript function isNaN() to find out if a value is a number
+*= JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+
+What are true about string method
+||CODE:java:
+//A
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000
+||
+*= The toString() method returns a number as a string.
+*= toFixed() returns a string, with the number written with a specified number of decimals like A
+
+[]
+This problem group has no title and has no introduction. When the text following the start of a new problem group is immediately followed by the options, it is inferred to be a problem.
+*= Yes I understand. :: Great! Here's some latex $\|a + b + c\|.$
+* No. :: Please email me and I'll try to help!
+
+This is another problem in this problem group.
+* This is a great tutorial!
+*= This tutorial can be improved. I'm going to email you with suggestions so you can do a better job.
