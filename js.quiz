@@ -59,8 +59,8 @@ The general rules for constructing names for variables:
 *= Names can also begin with $ and _ (but we will not use it in this tutorial)
 *= Names are case sensitive (y and Y are different variables)
 *= Reserved words (like JavaScript keywords) cannot be used as names
-* Name cant start with number.
-* Name can start with special character.
+* Name can only start with number.
+* Name can only start with special character.
 
 Which are true about JavaScript Data Types:
 ||CODE:java:
@@ -310,13 +310,109 @@ x.toFixed(2);           // returns 9.66
 x.toFixed(4);           // returns 9.6560
 x.toFixed(6);           // returns 9.656000
 ||
+||CODE:java:
+//B
+ var x = 9.656;
+x.toPrecision();        // returns 9.656
+x.toPrecision(2);       // returns 9.7
+x.toPrecision(4);       // returns 9.656
+x.toPrecision(6);       // returns 9.65600 
+||
+||CODE:java:
+//C
+ var x = 123;
+x.valueOf();            // returns 123 from variable x
+(123).valueOf();        // returns 123 from literal 123
+(100 + 23).valueOf();   // returns 123 from expression 100 + 23
+||
 *= The toString() method returns a number as a string.
 *= toFixed() returns a string, with the number written with a specified number of decimals like A
+*= toPrecision() returns a string, with a number written with a specified length like B
+*= valueOf() returns a number as a number like D.
+* String to int and vice versa require a like C++
+* Due to immutable, string and int need to create a seperate variables to cast
 
-[]
-This problem group has no title and has no introduction. When the text following the start of a new problem group is immediately followed by the options, it is inferred to be a problem.
-*= Yes I understand. :: Great! Here's some latex $\|a + b + c\|.$
-* No. :: Please email me and I'll try to help!
+||CODE:java:
+Number("10,33");
+||
+return?
+*= returns NaN
+* return 10
+* return 33
+* return null
+* return undefined
+
+||CODE:java:
+Number("10 33");
+||
+return?
+*= returns NaN
+* return 10
+* return 33
+* return null
+* return undefined
+
+The Number() method on date return
+*= the number of milliseconds since 1.1.1970. 
+* undefined
+* null
+* year
+* date
+
+||CODE:java:
+parseInt("10 years");   // A
+parseInt("years 10");   // B
+||
+
+*= A: 10 , b: NaN
+* A: 10 year, b: 10
+* A: 10 , b: years
+* A: NaN, b: NaN
+
+[JS Fat arrow]
+This is the statement for problem group one.
+At ||LINK: https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/||
+
+What Are Arrow Functions?
+||CODE:java:
+// (param1, param2, paramN) => expression
+// ES5 A
+var multiplyES5 = function(x, y) {
+  return x * y;
+};
+// ES6 B
+const multiplyES6 = (x, y) => { return x * y };
+//C
+const multiplyES6 = (x, y) => x * y;
+//D
+var phraseSplitterEs5 = function phraseSplitter(phrase) {
+  return phrase.split(' ');
+};
+//ES6
+const phraseSplitterEs6 = phrase => phrase.split(" ");
+//E
+//ES5
+var docLogEs5 = function docLog() {
+    console.log(document);
+};
+//ES6
+var docLogEs6 = () => { console.log(document); };
+docLogEs6(); // #document... <html> ….
+||
+*= Arrow functions – also called “fat arrow” functions, from CoffeeScript (a transcompiled language) — are a more concise syntax for writing function expressions.
+*= They utilize a new token, =>, that looks like a fat arrow. Arrow functions are anonymous and change the way this binds in functions.
+*= By using arrow functions, we avoid having to type the function keyword, return keyword (it’s implicit in arrow functions), and curly brackets.
+* Fat arrow is a refactor of C++ -> operator when port from
+* Fat arrow is a from ES5
+* A and B is not equal.
+* C is wrong
+*= Parentheses are optional when only one parameter is present like D
+*= Parentheses are required when no parameters are present like E
+* Fat arrow can be used like a normal function, with this for example :: hell no, you can't use this. ||LINK: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions||
+
+Use Cases for Arrow Functions?
+* test
+
 
 This is another problem in this problem group.
 * This is a great tutorial!
