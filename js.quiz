@@ -363,11 +363,33 @@ The Number() method on date return
 parseInt("10 years");   // A
 parseInt("years 10");   // B
 ||
-
 *= A: 10 , b: NaN
 * A: 10 year, b: 10
 * A: 10 , b: years
 * A: NaN, b: NaN
+
+Access the Elements of an Array
+||CODE:java:
+//A
+var name = cars[0];
+||
+*= You access an array element by referring to the index number like A.
+* You access an array element by function get().
+* You access an array element by function fetch(index).
+* You access an array element by function get(index).
+
+Waht are true about js array
+||CODE:java:
+//A
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.length;   // the length of fruits is 4
+|| 
+*=The length property of an array returns the length of an array (the number of array elements) like A
+*= The length property is always one more than the highest array index
+* The length property is always equal with the highest array index
+* The length is maximum 60
+
+
 
 [JS Fat arrow]
 This is the statement for problem group one.
