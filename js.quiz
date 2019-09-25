@@ -388,6 +388,222 @@ fruits.length;   // the length of fruits is 4
 *= The length property is always one more than the highest array index
 * The length property is always equal with the highest array index
 * The length is maximum 60
+*= A is also how to create array
+
+What are true about array
+||CODE:java:
+//A
+var last = fruits[fruits.length - 1];
+||
+||CODE:java:
+//B
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+for (i = 0; i < fLen; i++) {
+  console.log (fruits[i]);
+}
+||
+||CODE:java:
+//C
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.forEach(myFunction);
+function myFunction(value) {
+   console.log({value});
+}
+//D
+fruits.push("Lemon"); 
+//===================
+var points = new Array();     // E
+var points = [];              // F
+//===================
+Array.isArray(fruits);   // G
+fruits.isArray;   // H
+//===================
+function isArray(x) { //I
+  return x.constructor.toString().indexOf("Array") > -1;
+}
+//===================
+var fruits = ["Banana", "Orange", "Apple", "Mango"]; //K
+fruits instanceof Array;   // returns true  
+|| 
+*= Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+* A is wrong, last must be access by keyword fruits.last; :: lol A is true
+* B and C are perfectly equivalent
+*= B and C are  kind of equivalent when loop through an array. :: yes A return string meanwhile B return an object.
+*= D is how to add a new element to an array
+*= Arrays with named indexes are called associative arrays (or hashes).
+* JavaScript does support arrays with named indexes.
+*= In JavaScript, objects use named indexes.
+*= E is bad, F is good practice.
+* E and F are both wrong since JS not support empty array.
+*= To detect an array, G is true and H is wrong.
+* To detect an array, H is true and G is wrong.
+*= for older browser not support ES5 you can use I or K function.
+
+What are true about JS array?
+||CODE:java:
+//A
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log (fruits.toString());
+//===============
+//B
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.join(" * "));
+//===============
+//C
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.pop();      // the value of x is "Mango" 
+//===============
+//D
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.push("Kiwi");   //  the value of x is 5 
+//===============
+//E
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.shift();    // the value of x is "Banana" 
+//===============
+//F
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Returns ? //G
+//===============
+//H
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+//I
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);
+//K
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+//L
+var arr1 = ["Cecilie", "Lone"];
+var arr2 = ["Emil", "Tobias", "Linus"];
+var arr3 = ["Robin", "Morgan"];
+var myChildren = arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3   
+||
+
+*=  JavaScript method toString() converts an array to a string of (comma separated) array values like A.
+* A will get an error since JavaScript not support toString() method on an array.
+*= The join() method also joins all array elements into a string. It behaves just like toString(), but in addition you can specify the separator like B
+* The pop() method just removes the last element from an array
+*= The pop() method removes the last element from an array and returns the value that was "popped out" like C
+* The push() method adds a new element to an array (at the top) and returns the new array length like D.
+*= The push() method adds a new element to an array (at the end) and returns the new array length like D.
+*= The shift() method removes the first array element and "shifts" all other elements to a lower index, returns the string that was "shifted out" like E
+* The shift() method removes the last array element and "shifts" all other elements to a lower index, returns the string that was "shifted out" like E
+* The shift() method shift right, returns the string that was "shifted out" like E
+*= The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements like F. 
+* G return "Lemon"
+*= G return 5 :: yes unshift() return size of the new array.
+*= Using delete may leave undefined holes in the array. Use pop() or shift() instead.
+*= Array elements are accessed using their index number like this ||CODE:java: fruits[0] = "Kiwi"; ||   
+*= elements can be deleted by using the JavaScript operator delete ||CODE:java: delete fruits[0];  // Changes the first element in fruits to undefined  || 
+*= The splice() method can be used to add new items to an array. The first parameter (2) defines the position where new elements should be added (spliced in). The second parameter (0) defines how many elements should be removed like H.       
+* The splice() method returns size of array with the deleted items :: The splice() method returns an array with the deleted items.
+*= I  Removes the first element of fruits.
+* I add an undefined element to fruits.
+*= concat() method creates a new array by merging (concatenating) existing arrays like K.
+* The concat() method change the existing arrays. :: The concat() method does not change the existing arrays. It always returns a new array.
+*= The concat() method can take any number of array arguments like L.
+
+What are true about JavaScript array?
+||CODE:java:
+//A
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1, 3);
+//B
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort(); 
+//C
+fruits.reverse(); 
+//D
+arrayX = [25,100];
+arrayX.sort();
+//E
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+//F
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return 0.5 - Math.random()});
+//G
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+//H
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+//I
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+]; 
+cars.sort(function(a, b){return a.year - b.year});
+//K
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  console.log(value);
+}
+//L
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+console.log(numbers2);
+console.log(numbers1);
+function myFunction(value, index, array) {
+  return value * 2;
+}
+//M
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+//N
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+} 
+//O
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+} 
+||
+*= The slice() method slices out a piece of an array into a new array.
+* The slice() method edit on the array itself ::The slice() method creates a new array. It does not remove any elements from the source array.
+*= A return Orange,Lemon :: The method then selects elements from the start argument, and up to (but not including) the end argument.
+* A return Orange,Lemon, Apple :: The method then selects elements from the start argument, and up to (but not including) the end argument.
+*= All JavaScript objects have a toString() method.
+*= The sort() method sorts an array alphabetically like B
+*= The reverse() method reverses the elements in an array like C
+*= By default, the sort() function sorts values as strings.
+* D will return 25,100; :: By default, the sort() function sorts values as strings.
+*= To sort an numeric array you must write a compare function like E. If the result is negative a is sorted before b. If the result is positive b is sorted before a.
+*= F is to shuffle an array
+* F is to order the array alphabetically.
+*= G is to find max value in array
+*= H is to find max value in array
+* I will have an error because we can't compare anything except primitive value in javascript. :: lol
+*= The forEach() method calls a function (a callback function) once for each array element like K
+*= The map() method creates a new array by performing a function on each array element like L.
+* forEach() and map() are equal and can be replace each other. :: forEach() doesn't return anything
+*= The filter() method creates a new array with array elements that passes a test like M.
+*= The reduce() method runs a function on each array element to produce (reduce it to) a single value like N.
+* The reduce() method works from right-to-left in the array :: The reduce() method works from left-to-right in the array. Array.reduceRight() right to left
+* The reduce() method  reduce the original array. :: The reduce() method does not reduce the original array.
+*= The every() method check if all array values pass a test like O
+
 
 
 
