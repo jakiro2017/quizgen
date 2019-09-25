@@ -741,6 +741,15 @@ finally {
   Block of code to be executed regardless of the try / catch result
 } 
 //F
+x = 5; // Assign 5 to x
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+var x; // Declare x
+//G
+var x = 5; // Initialize x
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x + " " + y;           // Display x and y
+var y = 7; // Initialize y 
 ||
 *= 6 type of objects : Object,Date,Array,String,Number,Boolean.
 * 6 type of data type: Object,Date,Array,String,Number,Boolean.
@@ -754,6 +763,19 @@ finally {
 *= The try statement allows you to define a block of code to be tested for errors while it is being executed.The catch statement allows you to define a block of code to be executed, if an error occurs in the try block like E. 
 *= If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable. Global variables are not created automatically in "Strict Mode".
 * In a web browser, global variables are deleted when you close the browser window (or tab), but remain available to new pages loaded into the same window.
+*= Hoisting is JavaScript's default behavior of moving declarations to the top. like F
+* In G, due to Hoisting, y = 7; :: JavaScript only hoists declarations, not initializations.
+*= To avoid bugs, always declare all variables at the beginning of every scope.
+*= Strict mode is declared by adding "use strict"; to the beginning of a script or a function. 
+*= The this keyword refers to the object that called the function. If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window).
+
+What are true about javascript?
+*= In a method, this refers to the owner object.
+* In a function, this refers to null. :: In a function, this refers to the global object.
+*= In an event, this refers to the element that received the event.
+
+
+
 
 
 
