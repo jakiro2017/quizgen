@@ -390,7 +390,7 @@ fruits.length;   // the length of fruits is 4
 * The length is maximum 60
 *= A is also how to create array
 
-What are true about array
+What are true about array?
 ||CODE:java:
 //A
 var last = fruits[fruits.length - 1];
@@ -484,7 +484,6 @@ var arr2 = ["Emil", "Tobias", "Linus"];
 var arr3 = ["Robin", "Morgan"];
 var myChildren = arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3   
 ||
-
 *=  JavaScript method toString() converts an array to a string of (comma separated) array values like A.
 * A will get an error since JavaScript not support toString() method on an array.
 *= The join() method also joins all array elements into a string. It behaves just like toString(), but in addition you can specify the separator like B
@@ -547,7 +546,6 @@ cars.sort(function(a, b){return a.year - b.year});
 var txt = "";
 var numbers = [45, 4, 9, 16, 25];
 numbers.forEach(myFunction);
-
 function myFunction(value, index, array) {
   console.log(value);
 }
@@ -562,20 +560,39 @@ function myFunction(value, index, array) {
 //M
 var numbers = [45, 4, 9, 16, 25];
 var over18 = numbers.filter(myFunction);
-
 function myFunction(value, index, array) {
   return value > 18;
 }
 //N
 var numbers1 = [45, 4, 9, 16, 25];
 var sum = numbers1.reduce(myFunction);
-
 function myFunction(total, value, index, array) {
   return total + value;
 } 
 //O
 var numbers = [45, 4, 9, 16, 25];
 var allOver18 = numbers.every(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+}
+//P
+var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+}
+//Q
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+//R
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+} 
+//S
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.findIndex(myFunction);
 function myFunction(value, index, array) {
   return value > 18;
 } 
@@ -603,7 +620,140 @@ function myFunction(value, index, array) {
 * The reduce() method works from right-to-left in the array :: The reduce() method works from left-to-right in the array. Array.reduceRight() right to left
 * The reduce() method  reduce the original array. :: The reduce() method does not reduce the original array.
 *= The every() method check if all array values pass a test like O
+*= The some() method check if some array values pass a test like P.
+* P is true.
+*= The indexOf() method searches an array for an element value and returns its position like Q.
+* Q return 3.
+* Array.indexOf() returns 0 if the item is not found. :: Array.indexOf() returns -1 if the item is not found.
+*= Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+*= The find() method returns the value of the first array element that passes a test function like R
+*= The findIndex() method returns the index of the first array element that passes a test function like S.
+* S return 2
 
+What are true about javascript?
+||CODE:java:
+//A
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+//B
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+//C
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+//D
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+//E
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+//F
+var person = {fname:"John", lname:"Doe", age:25};
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
+}
+//G
+var cars = ['BMW', 'Volvo', 'Mini'];
+var x;
+for (x of cars) {
+  console.log(x);
+} 
+//H
+while (condition) {
+  // code block to be executed
+} 
+||
+*= Math.random() always returns a number lower than 1.
+* JavaScript had a predefined function to generate random from min or max :: wrong you must write it like A.
+*= Everything Without a "Value" is False.
+* The Boolean value of -0 (minus zero) is true.
+* The Boolean value of NaN is true;
+*= if else syntax like B.
+*= switch syntax  like C.
+* switch break is optional, don't affect code logic. :: If you omit the break statement, the next case will be executed even if the evaluation does not match the case.
+*= The default keyword specifies the code to run if there is no case match
+* The default case have to be the last case in a switch block :: The default case does not have to be the last case in a switch block.
+* D will have compiler error due to don't have break in 4,5 0,6. :: case 4 and 5 share the same code block, and 0 and 6 share another code block.
+* If multiple cases matches a case value, the last case is selected. :: If multiple cases matches a case value, the first case is selected.
+*= If no default label is found, the program continues to the statement(s) after the switch.
+* Switch cases use value comparison == ::Switch cases use strict comparison (===).
+*= In E, Statement 1 is executed (one time) before the execution of the code block. Statement 2 defines the condition for executing the code block.Statement 3 is executed (every time) after the code block has been executed.
+* In E, Statement 1 is executed everytime before the execution of the code block. Statement 2 defines the condition for executing the code block.Statement 3 is executed (every time) after the code block has been executed.
+* Statement 1 in E is a must. :: Statement 1 is optional.
+* Statement 2 in E is a must. :: Statement 2 is optional. If you omit statement 2, you must provide a break inside the loop. Otherwise the loop will never end.
+*= JavaScript for/in statement loops through the properties of an object like F
+*= The JavaScript for/of statement loops through the values of an iterable objects. for/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more. Eg: G.
+*= The while loop loops through a block of code as long as a specified condition is true like H
+*= The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+*=  while loop is much the same as a for loop, with statement 1 and statement 3 omitted.
+*= The break statement "jumps out" of a loop.
+*= The continue statement "jumps over" one iteration in the loop.
+
+What are true about javascript?
+||CODE:java:
+//A
+typeof new Date();
+//B
+function isDate(myDate) {
+  return myDate.constructor.toString().indexOf("Date") > -1;
+}
+//C
+ var y = "5";      // y is a string
+var x = + y;      // x is a ?
+//D
+Number(false)     // returns 0
+Number(true)      // returns 1 
+//E
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+} 
+finally {
+  Block of code to be executed regardless of the try / catch result
+} 
+//F
+||
+*= 6 type of objects : Object,Date,Array,String,Number,Boolean.
+* 6 type of data type: Object,Date,Array,String,Number,Boolean.
+* Only undefined cannot contain value. :: 2 data types that cannot contain values: null,undefined 
+* A return Date. :: A return Object
+*= The constructor property returns the constructor function for all JavaScript variables. You can check the constructor property to find out if an object is a Date like B
+*= parseFloat() 	Parses a string and returns a floating point number
+*= parseInt() 	Parses a string and returns an integer
+* x is a string :: The unary + operator can be used to convert a variable to a number, x is a number. If the variable cannot be converted, it will still become a number, but with the value NaN (Not a Number).
+* method Number() can also convert booleans to numbers like D.
+*= The try statement allows you to define a block of code to be tested for errors while it is being executed.The catch statement allows you to define a block of code to be executed, if an error occurs in the try block like E. 
+*= If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable. Global variables are not created automatically in "Strict Mode".
+* In a web browser, global variables are deleted when you close the browser window (or tab), but remain available to new pages loaded into the same window.
 
 
 
