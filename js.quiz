@@ -770,9 +770,28 @@ var y = 7; // Initialize y
 *= The this keyword refers to the object that called the function. If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window).
 
 What are true about javascript?
+||CODE:java:
+var i = 5;
+for (var i = 0; i < 10; i++) {
+  // some statements
+}
+// Here i is ?
+//===========
+//B
+let i = 5;
+for (let i = 0; i < 10; i++) {
+  // some statements
+}
+// Here i is ?
+||
 *= In a method, this refers to the owner object.
 * In a function, this refers to null. :: In a function, this refers to the global object.
 *= In an event, this refers to the element that received the event.
+*= Redeclaring a variable inside a block will not redeclare the variable outside the block
+* A : i is 5 after loop
+* B : i is 10 affect loop
+* A : i is 10 after loop
+* B : is 5 affect loop
 
 
 
