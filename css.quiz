@@ -1,0 +1,98 @@
+== css quiz
+[Basic CSS]
+This is the statement for problem group one.
+At ||LINK: https://www.w3schools.com/css/css_intro.asp||
+
+What are true about CSS
+||CODE:css:
+p {//A 
+  color: red;
+  text-align: center;
+} 
+||
+*= CSS stands for Cascading Style Sheets
+*= CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+*= A CSS rule-set consists of a selector and a declaration block like A
+*= A CSS comment starts with /* and ends with */. Comments can also span multiple lines.
+* A class name can start with a number! :: A class name cannot start with a number!
+
+What are true about CSS
+||CODE:html:
+//E
+<p class="center large">This paragraph refers to two classes.</p> 
+//==============
+p { //A
+  text-align: center;
+  color: red;
+}
+#para1 { //B
+  text-align: center;
+  color: red;
+}
+.center { //C
+  text-align: center;
+  color: red;
+}
+p.center { //D
+  text-align: center;
+  color: red;
+} 
+//F
+* {
+  text-align: center;
+  color: blue;
+}
+//G
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+||
+*= A mean all <p> elements on the page will be center-aligned, with a red text color. 
+* A mean all class name p on the page will be center-aligned, with a red text color. 
+* B mean all class name para1 on the page will be center-aligned, with a red text color.
+*= B mean all id named para1 on the page will be center-aligned, with a red text color.
+*= C mean all class name center on the page will be center-aligned, with a red text color.
+* D will give an error due to wrong syntax.
+*= D mean all elements p with class name center will be center-aligned, with a red text color.
+*= E mean the <p> element will be styled according to class="center" and to class="large": 
+*= The universal selector (*) selects all HTML elements on the page.
+*= G is The grouping selector selects all the HTML elements with the same style definitions.
+
+What are true about CSS
+||CODE:html:
+<!DOCTYPE html> //A
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+||
+||CODE:html:
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: linen;
+}
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+</head>
+<body>
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+</body>
+</html>
+||
+*= External styles are defined within the <link> element, inside the <head> section of an HTML page
+*  Must add a space between the property value and the unit ::  Do not add a space between the property value and the unit. The correct way is: margin-left: 20px;
+
+
