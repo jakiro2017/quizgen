@@ -783,6 +783,15 @@ for (let i = 0; i < 10; i++) {
   // some statements
 }
 // Here i is ?
+//===========
+let x = 2;       // C
+let x = 3;       // D
+//===========
+const PI; //E
+PI = 3.14159265359;
+//F
+const car = {type:"Fiat", model:"500", color:"white"};
+car = {type:"Volvo", model:"EX60", color:"red"};
 ||
 *= In a method, this refers to the owner object.
 * In a function, this refers to null. :: In a function, this refers to the global object.
@@ -792,10 +801,15 @@ for (let i = 0; i < 10; i++) {
 * B : i is 10 affect loop
 * A : i is 10 after loop
 * B : is 5 affect loop
-
-
-
-
+*= Global variables defined with the let keyword do not belong to the window object
+*= Redeclaring a let variable with let, in the same scope, or in the same block, is not allowed
+* C is not allowed, D is allowed
+*= Variables defined with const behave like let variables, except they cannot be reassigned
+* E is Ok
+* You can't change the properties of a constant object :: You can change the properties of a constant object
+*= You can NOT reassign a constant object
+* F is Ok
+*= You can change the elements of a constant array
 
 
 [JS Fat arrow]
@@ -838,11 +852,59 @@ docLogEs6(); // #document... <html> ….
 *= Parentheses are optional when only one parameter is present like D
 *= Parentheses are required when no parameters are present like E
 * Fat arrow can be used like a normal function, with this for example :: hell no, you can't use this. ||LINK: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions||
+*= the this keyword always represents the object that defined the arrow function.
+*= With an arrow function this represents the owner of the function
 
-Use Cases for Arrow Functions?
-* test
+[JS class]
+This is the statement for problem group one.
+At ||LINK: https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/||
 
-
-This is another problem in this problem group.
-* This is a great tutorial!
-*= This tutorial can be improved. I'm going to email you with suggestions so you can do a better job.
+What are true about javascript?
+||CODE:java:
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+}
+//=============
+//B
+ class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  static hello() {
+    return "Hello!!";
+  }
+}
+mycar = new Car("Ford");
+//Call 'hello()' on the class Car:
+document.getElementById("demo").innerHTML = Car.hello();
+//and NOT on the 'mycar' object:
+//document.getElementById("demo").innerHTML = mycar.hello();
+//this would raise an error. 
+//==============
+//C
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  get cnam() {
+    return this.carname;
+  }
+  set cnam(x) {
+    this.carname = x;
+  }
+}
+mycar = new Car("Ford");
+document.getElementById("demo").innerHTML = mycar.cnam; 
+||
+*= ES6, also known as ECMAScript2015, introduced classes
+*= A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword class, and the properties is assigned inside a constructor() method.
+*= Use the keyword class to create a class, and always add a constructor method. The constructor method is called each time the class object is initialized like A
+* if you do not have a constructor method, JavaScript complain error. :: if you do not have a constructor method, JavaScript will add an invisible and empty constructor method
+*= Static methods are defined on the class itself, and not on the prototype. That means you cannot call a static method on the object (mycar), but on the class (Car) like B.
+*= To create a class inheritance, use the extends keyword. A class created with a class inheritance inherits all the methods from another class
+* By calling the super() method in the constructor method, we call the parent's constructor method and gets access to the parent's methods. :: By calling the super() method in the constructor method, we call the parent's constructor method and gets access to the parent's **properties** and methods.
+*= use getters and setters for your properties, especially if you want to do something special with the value before returning them, or before you set them. To add getters and setters in the class, use the get and set keywords like C.
+* The name of the getter/setter method can be the same as the name of the property :: The name of the getter/setter method cannot be the same as the name of the property
+* The getter is a method, you must use parentheses when you want to get the property value. :: The getter is a method, you **do not** use parentheses when you want to get the property value
