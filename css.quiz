@@ -324,8 +324,53 @@ What are true about CSS
 p { //A
   font-family: "Times New Roman", Times, serif;
 }
+//B
+body {
+  font-size: 100%;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 1.875em;
+}
+p {
+  font-size: 0.875em;
+}
+//C
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<i class="fas fa-cloud"></i>
+<i class="fas fa-heart"></i>
+<i class="fas fa-car"></i>
+<i class="fas fa-file"></i>
+<i class="fas fa-bars"></i>
+</body>
+</html>
 ||
 *= Serif fonts have small lines at the ends on some characters. "Sans" means without - these fonts do not have the lines at the ends of characters
 *= The font-family property should hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font, and so on. like A
 * The font-style property is mostly used to specify italic and bold text :: The font-style property is mostly used to specify italic text.
+* The font-size value can be only absolute. :: The font-size value can be an absolute, or relative size. Relative sets the size relative to surrounding elements Allows a user to change the text size in browsers
+* 1em is 4px (group pixel) :: 1em is equal to the current font size. The default text size in browsers is 16px. So, the default size of 1em is 16px.
+*= The solution that works in all browsers, is to set a default font-size in percent for the <body> element like B
+* vw stands for very wide, which this font will be cover full width of browser. :: vw unit, which means the "viewport width".That way the text size will follow the size of the browser window.Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+*= The font-variant property specifies whether or not a text should be displayed in a small-caps font.
+* In a small-caps font appears in a smaller font size than the original uppercase letters in the text. :: In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+* To add icon must manual add image.
+*= To add icon you can use fontawesome or bootstrap, google icon like C.
+
+What are true about CSS
+*=The four links states are: a:link ,a:visited ,a:hover ,a:active.
+*=a:link - a normal, unvisited link
+*= a:visited - a link the user has visited
+*= a:hover - a link when the user mouses over it
+*= a:active - a link contain on focus element :: a link the moment it is clicked
+*= a:hover MUST come after a:link and a:visited
+* a:active MUST come before a:hover :: a:active MUST come after a:hover
+
 
