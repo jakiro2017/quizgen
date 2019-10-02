@@ -465,3 +465,233 @@ What are true
 * visibility:hidden; is the same as display:none :: visibility:hidden; also hides an element. However, the element will still take up the same space as before
 *= Setting the width of a block-level element will prevent it from stretching out to the edges of its container.
 * When use max width, when the browser window is smaller than the width of the element. The browser then adds a horizontal scrollbar to the page. :: with width not max width
+
+What are true
+||CODE:html:
+//A
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: green;
+  border: 2px solid #4CAF50;
+}
+||
+*= The position property specifies the type of positioning method used for an element.
+* There are four different position values: static,relative,fixed,absolute :: There are 5 different position values: static,relative,fixed,absolute,sticky
+*= HTML elements are positioned static by default.
+* Static positioned elements are affected by the top, bottom, left, and right properties. :: Static positioned elements are not affected by the top, bottom, left, and right properties.
+*= Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+*= An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+* A fixed element not leave a gap in the page where it would normally have been located. :: A fixed element does not leave a gap in the page where it would normally have been located.
+*= An element with position: absolute; is positioned relative to the nearest positioned ancestor
+*= if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+* An element with position: sticky; is positioned on the edge. :: An element with position: sticky; is positioned based on the user's scroll position.
+*= A is an example to put text in sticky, it need to call webkit for safari support
+*= The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+* An element with smaller stack order is always in front of an element with a lower stack order. :: An element with greater stack order is always in front of an element with a lower stack order.
+
+What are true?
+*= The CSS overflow property controls what happens to content that is too big to fit into an area.
+*= The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+*= By default, the overflow is visible, meaning that it is not clipped and it renders outside the element's box:
+* With the hidden value, the overflow is clipped, all of the content is hidden :: With the hidden value, the overflow is clipped, and the rest of the content is hidden
+* Setting the value to scroll, the overflow is clipped and a scrollbar is added to scroll inside the box. The scrollbar will be add automatically when content too long) :: Setting the value to scroll, the overflow is clipped and a scrollbar is added to scroll inside the box. Note that this will add a scrollbar both horizontally and vertically (even if you do not need it)
+*= The auto value is similar to scroll, but it adds scrollbars only when necessary
+*=  overflow-x specifies what to do with the left/right edges of the content. overflow-y specifies what to do with the top/bottom edges of the content.
+
+What are true
+||CODE:html:
+//A
+.nav {
+  background-color: yellow;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+||
+*= The float property is used for positioning and formatting content e.g. let an image float left to the text in a container. In its simplest use, the float property can be used to wrap text around images.
+*= When clearing floats, you should match the clear to the float: If an element is floated to the left, then you should clear to the left. Your floated element will continue to float, but the cleared element will appear below it on the web page.
+* display: inline is another way to call display: inline-block  ::display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+*= with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+*= Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+* inline-block is deprecated and not have irl use :: Using inline-block to Create Navigation Links like A
+
+The float property can have one of the following values:
+*=left - The element floats to the left of its container
+*=right - The element floats to the right of its container
+*=none - The element does not float (will be displayed just where it occurs in the text). This is default
+*=inherit - The element inherits the float value of its parent
+*block - The element block the space of the parent
+
+What are true?
+||CODE:html:
+img { //A
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+//B
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+//C
+.clearfix {
+  overflow: auto;
+}
+//D
+.center {
+  padding: 70px 0;
+  border: 3px solid green;
+}
+//E
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+//F
+.center {
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid green;
+  text-align: center;
+}
+/* If the text has multiple lines, add the following: */
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+//G
+.center {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+||
+*= To horizontally center a block element (like <div>), use margin: auto;
+* setting the position:fixed element will prevent it stretching  ::Setting the width of the element will prevent it from stretching out to the edges of its container. The element will then take up the specified width, and the remaining space will be split equally between the two margins:
+*= To center an image, set left and right margin to auto and make it into a block element like A
+*= B is use to align the position of element :: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+*=  If an element is taller than the element containing it, and it is floated, it will overflow outside of its container. You can use the "clearfix" hack to fix this like C. to the containing element
+*= to center an element vertically in CSS. A simple solution is to use top and bottom padding like D
+*= E is to center text horizontally
+* F is to center text horizontally
+*= G is to center text vertically
+
+Match
+A.descendant selector.
+B.child selector.
+C.adjacent sibling selector.
+D.general sibling selector.
+1. space.
+2. > .
+3.+  .
+4. ~ .
+*= A1 B2 C3 D4
+* A1 B3 C2 D4
+* A1 B3 C4 D2
+* Not have correct answer
+
+
+What are true
+||CODE:css:
+div p {//A
+  background-color: yellow;
+}
+//B
+div > p {
+  background-color: yellow;
+}
+//C
+div + p {
+  background-color: yellow;
+}
+//D
+div ~ p {
+  background-color: yellow;
+}
+||
+*=The descendant selector matches all elements that are descendants of a specified element.
+*= A select all p element inside div element
+*= The child selector selects all elements that are the children of a specified element.
+* child selector is bigger than descendants :: My daughter is both my child and my descendant.My granddaughter is not my child, but she is my descendant.
+* B selects all <p> elements that are inside of a <div> element. :: B selects all <p> elements that are children of a <div> element:
+*= Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+*= C selects all <p> elements that are placed immediately after <div> elements
+*= D selects all <p> elements that are siblings of <div> elements.
+* C and D have the same effect. :: C just call the immediately sibling , D call all sibling
+
+What are true
+||CODE:css:
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+//B
+img {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+img:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+//C
+div {
+  opacity: 0.3;
+  filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+//D
+#home {
+  width: 46px;
+  height: 44px;
+  background: url(img_navsprites.gif) 0 0;
+}
+||
+*= A pseudo-class is used to define a special state of an element. like hover,focus, like A
+*= A CSS pseudo-element is used to style specified parts of an element. Eg: Style the first letter, or line, of an element.Insert content before, or after, the content of an element
+* B is create hover effect when hover mouse over will fade image
+*= C create a transparent box which element will be faded to the right
+*= An image sprite is a collection of images put into a single image.
+* Using image sprites won't reduce the number of server requests and save bandwidth :: Using image sprites will reduce the number of server requests and save bandwidth.
+*= D load a sprite
+
+What are true
+||CODE:css:
+//A
+a[target] {
+  background-color: yellow;
+}
+//B
+a[target="_blank"] { 
+  background-color: yellow;
+}
+//C
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+||
+*= A mean all a element will be styled if have attribute target.
+* B mean all a element will be styled if have attribute target ::  selects all <a> elements with a target="_blank" attribute
+*= C mean style all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
+* C will accept my-flower
+
