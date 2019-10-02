@@ -456,3 +456,11 @@ th, td {
 
 What are true
 *= Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
+*= An inline element does not start on a new line and only takes up as much width as necessary.
+*= A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).
+* span is a block element :: span, img, a  is inline element
+*= display: none;  is used to hide element
+* you  can't override the default element display value
+* visibility:hidden; is the same as display:none :: visibility:hidden; also hides an element. However, the element will still take up the same space as before
+*= Setting the width of a block-level element will prevent it from stretching out to the edges of its container.
+* When use max width, when the browser window is smaller than the width of the element. The browser then adds a horizontal scrollbar to the page. :: with width not max width
