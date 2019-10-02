@@ -373,4 +373,86 @@ What are true about CSS
 *= a:hover MUST come after a:link and a:visited
 * a:active MUST come before a:hover :: a:active MUST come after a:hover
 
+||CODE:html:
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color: red;
+}
+//B
+ul.a {
+  list-style-type: circle;
+}
+ul.b {
+  list-style-type: square;
+}
+ol.c {
+  list-style-type: upper-roman;
+}
+ol.d {
+  list-style-type: lower-alpha;
+}
+//C
+ul {
+  list-style-image: url('sqpurple.gif');
+}
+||
+*= The background color and  the padding make the button like
+* We need html code to define a as a button
+*= there are two main types of lists: unordered lists (<ul>) ,ordered lists (<ol>)
+*= unordered lists (<ul>) - the list items are marked with bullets
+*= ordered lists (<ol>) - the list items are marked with numbers or letters
+*= The list-style-type property specifies the type of list item marker like B
+*= The list-style-image property specifies an image as the list item marker like C
+*= "list-style-position: outside;" means that the bullet points will be outside the list item.
+* The marker/bullet can't be removed :: The list-style-type:none property can also be used to remove the markers/bullets. Note that the list also has default margin and padding. To remove this, add margin:0 and padding:0 to <ul> or <ol>
 
+What are true
+When using the shorthand property, the order of the property values are:
+||CODE:java:
+//A
+1.list-style-type (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
+2.list-style-position (specifies whether the list-item markers should appear inside or outside the content flow)
+3.list-style-image (specifies an image as the list item marker)
+||
+||CODE:css:
+//B
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+//C
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+//D
+table, th, td {
+  border: 1px solid black;
+}
+//E
+table {
+  border-collapse: collapse;
+}
+//F
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+||
+*=list-style property is a shorthand property. It is used to set all the list properties in one declaration
+* statement A order is wrong. should be 2 3 1 :: A is true
+*= B is used to highlight even row
+* C is class customers to highlight :: id not class
+*= To specify table borders in CSS, use the border property like D
+* E is to add property collapse all data for table :: The border-collapse property sets whether the table borders should be collapsed into a single border
+*= To control the space between the border and the content in a table, use the padding property on <td> and <th> elements
+*= Add the border-bottom property to <th> and <td> for horizontal dividers like F
+
+What are true
+*= Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
