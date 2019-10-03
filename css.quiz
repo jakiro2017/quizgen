@@ -118,9 +118,11 @@ h1 {
 * In C, h1 color will be red. :: orange, dude
 
 All the styles in a page will "cascade" into a new "virtual" style sheet by the following rules, where number one has the highest priority:
+||CODE::text:
 1.Inline style (inside an HTML element)
 2.External and internal style sheets (in the head section)
 3.Browser default
+||
 *= The statement is correct.
 * The order should be 2 1 3
 * The order should be 3 1 2
@@ -266,7 +268,7 @@ All the padding properties can have the following values:
 * enforce padding true or false
 
 ||IMG:
-https://lh3.googleusercontent.com/HMi4iOLxeRUvxKXw6Fm0HWMcYsKEtwex7BQqrUx0IXi0-aXe1dkAAiXHIb_klvM1aLaQ18c0sEg18yGd3fIUCbbGh_n9Q6uLTi5b-hbSCXcvomErawopSr_VFDM7T1e0T78SLnbc-8buD_dfBDil7nblxVnvtWTrG0fEBsjZ_XNmgwuMpHiMFSfnNXreXWNl4lLx3en-JW9NZCRs5B9FyVTWpvF-AQIkVQ6gj2l0Z-1v2ykabf5MEZPwPSO1Zh-ND1fKXCpCs4EAa9wyDd4WNYTWVLwW-1OlusMTfSrhYsb9UnfbtnwyKOzQ8cjCaNKw0wvbExnJ0Yxb7cNZ0MOyDzQyTN5fEPaZu5QftWJ_B1LimNVQft_-nUioUPIHCQFimwIpVVjlB9m9vr0CX2QOOk--vieqJ9LmuDUanUKTirzZ4TySNaw3WeBzWH2X0rFzdZQDqH2ZlYPO24GbiFrJa9nOvUh8i3C_TQztGLjHOYQ68bscyFgMCtym3am7FJ-eZOF2mtQmHnApTG9L51MxZeOacgAW15Ap1LjDCsYeCh6YKzHXH0q8FFSKzxoKlEXhrcNc6n61W5Al-18ZLHRT-R66mdUQiH7g8AivMK1Pk-FG8cbR_jzU1tHAJXEwctareDoCDsh70E8sfzKqYGX7seITSO91MU-jgKMWGfz-u8Ns0TpvFZnzP1I=w1308-h397-no||
+https://lh3.googleusercontent.com/xbxVvM6F38GQhNQjXs5CeapNc-TSyemz19wglSUTJm1jgp50pDsWT8W6UErz5VAPPC_V8R7PidAY_-z4jKwgHEC8yvnWYTUPGWgqdJRzbENlZz0V9e91QViKRddUio5fbpiSVUq8B4POx2B-YWc6_ib88L4iq7DjLilVDlt2_djehB2SoMjp3DULwr3K2YfgqqUqn8soqTpLdOXA9DbmzwShcp3hYaAFWvcGGIx4PPj1V8kBINFyYdEij1s_isN1ttxKbFZJ5OV-j4MzLWqRiwpZLeCyFEgYMhu7WMCWbt7EiEyQgxM1gdNgAHnXx8ex0JUWL1-mHtHdV1nfmec-nN-VXPGBWDup2tZH6uMfgmPXYmtRsvtd1u3Z7H2yVAjWIcojKhti4OAxf9c2GBgA6EQLbJdD603U0gjdKaQlbsyyZIxJFJeaVz43OKGHDHyv9vGsamqjQwjBIREu5VqI6aKbH2QmPIZbSQ4SN5YtEYm4hgqcrZfl94x1-h5jfwnrIW06p5E_fktVSSr8ShVUk26sT4hLJnaCm1J_vvF2I_BpG1DSIFo2IaMLOeoSbNk7WTVd0VCNkFOz9v20DywpJ1QmVmCf8Rj2_6tl2vcEM50gaeH0hIJghatSZuhrdyvLdARWRp8SK95TCfMF5M-Y4ANzFz2XaH--JZGoM5APunRgU5phMCbpVmQ=w1308-h397-no||
 *= This is box model CSS
 * This is element model
 * This is a qml model migrated to css
@@ -415,7 +417,7 @@ ul {
 
 What are true
 When using the shorthand property, the order of the property values are:
-||CODE:java:
+||CODE:text:
 //A
 1.list-style-type (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
 2.list-style-position (specifies whether the list-item markers should appear inside or outside the content flow)
@@ -598,14 +600,16 @@ img { //A
 *= G is to center text vertically
 
 Match
+||CODE:text:
 A.descendant selector.
 B.child selector.
 C.adjacent sibling selector.
 D.general sibling selector.
-1. space.
-2. > .
-3.+  .
-4. ~ .
+1. space
+2. > 
+3.+  
+4. ~ 
+||
 *= A1 B2 C3 D4
 * A1 B3 C2 D4
 * A1 B3 C4 D2
@@ -688,10 +692,226 @@ a[target="_blank"] {
 //C
 [title~="flower"] {
   border: 5px solid yellow;
+}//D
+[class|="top"] {
+  background: yellow;
+}
+//E
+[class^="top"] {
+  background: yellow;
+}
+//F 
+[class$="test"] {
+  background: yellow;
+}
+//G
+[class*="te"] {
+  background: yellow;
+}
+//H 
+input[type=text] {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+//I 
+input[type=text] {
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+  width: 100%;
 }
 ||
 *= A mean all a element will be styled if have attribute target.
 * B mean all a element will be styled if have attribute target ::  selects all <a> elements with a target="_blank" attribute
 *= C mean style all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
 * C will accept my-flower
+* D wont accept class="top-text" :: selector is used to select elements with the specified attribute starting with the specified value. The following example selects all elements with a class attribute value that begins with "top". The value has to be a whole word, either alone, like class="top", or followed by a hyphen( - ), like class="top-text"! 
+*= E  selects all elements with a class attribute value that begins with "top" :: The value does not have to be a whole word! 
+*= F selects all elements with a class attribute value that ends with "test":: The value does not have to be a whole word!  
+*= G selects all elements with a class attribute value that contains "te":: value does not have to be a whole word!  
+*= H add a search icon to input
+*= I add transition longer search value
+*= CSS counters let you adjust the appearance of content based on its location in a document.  :: For example, you can use counters to automatically number the headings in a webpage. 
 
+What are true?
+||IMG: https://lh3.googleusercontent.com/qrk71g-MiZ2nGrCP8CGnnEJ5ufLilBKTRxZmJow055GbP5AvLGrYt0I6YbhJgdOxkifhtTZiIqqVwEm1vKRuP0mSHl4JV7JXB_fhHb9Lwe83_2YMOV9KbD8tDlqgKIUAqwV42CJ-Fyd7vNEW_M6rqAOSzJ1yLqbzCw4Ge8xX07gAymmFf3sk4c9cxrrFpXrGN5Kq6isd0PVC677bNX9rEFrlxOcvjkEC-ERBmR3g8aHcFHj9hEdT8NiVMdEmYgilMX3YH8E7y3t-2Zz8Sjo08JkBNVhJcQq9oAcgCGR3olUc2ybt13Yb8be5uBJjs-_by4zhjU_E5lIjpHNQSzLPnqvpkXdrXym2yBrBv6W1BDV-yLDnglEypQnrg34mjRGSNzbALO-1kzHu81RmUw3ypuyyKh5ywZB9ikkkvMyPBOdMoPAebwCFbkn4QlWTDvpPBgUqKcCG5Zme5KJbS87x9th79R-F2E4RogHlqoXbY2FqcidrjNxGAN8gf2-waC7T9pnDL1eOQjFE9qdfLKCKZ96eW5P2-k2nYdIZ-cKensLMCvJky8KO-y5eWEtDXF7nUIZ4VtoSJ6681TBK2DvWfVRJ3wM6_CTnbZB8keJzj2AvxA80eCjl9tMa3KO7j468zgmHwbEafx-kwQNsYld4VirFevRviGu0OT0dd1KcADs3SxXdfOpfk4c=w1295-h488-no||
+||CODE:css:
+//A
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+//B 
+.column {
+  float: left;
+}
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+||
+* This is a tablet form :: 3-column layout (only used for desktops) 1-column (often used for mobile browsers) 2-column (often used for tablets and laptops)
+*= A create 3 column and merge to 1 after detect screen < 600 :: To create a 2-column layout, change the width to 50%. To create a 4-column layout, use 25%, etc. A more modern way of creating column layouts, is to use CSS Flexbox. However, it is not supported in Internet Explorer 10 and earlier versions. If you require IE6-10 support, use floats (as shown above). 
+* B create equal width column
+*= The em and rem units are practical in creating perfectly scalable layout!
+*= em Relative to the font-size of the element (2em means 2 times the size of the current font)
+* rem Relative to the font-size of the recursive element ::	Relative to font-size of the root element
+
+What are true?
+||CODE:text:
+1.Inline styles - An inline style is attached directly to the element to be styled. Example: <h1 style="color: #ffffff;">.
+2.IDs - An ID is a unique identifier for the page elements, such as #navbar.
+3.Elements and pseudo-elements - This category includes element names and pseudo-elements, such as h1, div, :before and :after.
+4.Classes, attributes and pseudo-classes - This category includes .classes, [attributes] and pseudo-classes such as :hover, :focus etc.
+||
+||CODE:css
+//A
+#rcorners3 {
+  border-radius: 25px;
+  background: url(paper.gif);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+//B 
+#example1 {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+}
+//C
+html {
+  background: url(img_man.jpg) no-repeat center fixed; 
+  background-size: cover;
+}
+||
+//D
+#grad {
+  background-image: linear-gradient(red, yellow);
+}
+//E
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+}
+div {
+  font-family: myFirstFont;
+}
+*=  Specificity is If there are two or more conflicting CSS rules that point to the same element, the browser follows some rules to determine which one is most specific and therefore wins out.
+*= The correct load order is 1243
+* The correct load order is 1234
+* The correct load order is 1324
+*= With the CSS border-radius property, you can give any element "rounded corners".
+* A is a button Rounded corners for an element with a background image :: A not a button
+*=  CSS border-image property, you can set an image to be used as the border around an element.
+* CSS forbid you to add multiple background images for an element, through the background-image property. B will return an error :: CSS allows you to add multiple background images for an element, through the background-image property
+*= C fill all background with image
+* D create gradient from red to yellow left to right :: up -> down
+* You can only create linear line gradient :: You can set angle, shape, repeat an gradient
+* You can only create box shadow of an element :: and text shadow
+*= CSS text effect let you control  overflowed content that is not displayed should be signaled to the user, Word Wrapping, Word Breaking, text are laid out horizontally or vertically
+*= E define a custom font to use later.
+
+What are true?
+||CODE:css:
+//A
+div {
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari prior 9.0 */
+  transform: rotate(20deg); /* Standard syntax */
+}
+//B 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+//C 
+div:hover {
+  width: 300px;
+}
+//D
+/* The animation code */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+/* The element to apply the animation to */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+//D 
+/* The animation code */
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+/* The element to apply the animation to */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+||
+*= A define a  Transforms Methods on Some older browsers 
+*= some transforms are translate(),rotate(),scaleX(),scaleY(),scale(),skewX(),skewY(),skew(),matrix()
+*= To create a transition effect, you must specify two things: the CSS property you want to add an effect to,the duration of the effect like B when C trigger
+* CSS forbid combination of transition and transform :: hell no yes CSS do allow
+* An animation is CSS integrate GIF. :: An animation lets an element gradually change from one style to another.
+*= Keyframes hold what styles the element will have at certain times like D
+*= Keyframes accept percentage load like C
+
+What are true?
+||CODE:css:
+//A
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+||
+*= A tooltip is often used to specify extra information about something when the user moves the mouse pointer over an element:
+* A define a tooltip with arrow point to the bottom :: /* At the top of the tooltip */
