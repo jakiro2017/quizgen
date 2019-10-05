@@ -782,7 +782,7 @@ What are true?
 * B create equal width column
 *= The em and rem units are practical in creating perfectly scalable layout!
 *= em Relative to the font-size of the element (2em means 2 times the size of the current font)
-* rem Relative to the font-size of the recursive element ::	Relative to font-size of the root element
+* rem Relative to the font-size of the recursive element :: Relative to font-size of the root element
 
 What are true?
 ||CODE:text:
@@ -912,6 +912,73 @@ What are true?
   border-style: solid;
   border-color: transparent transparent black transparent;
 }
+//B
+img {
+  max-width: 100%;
+  height: auto;
+}
+//C
+img {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+}
 ||
 *= A tooltip is often used to specify extra information about something when the user moves the mouse pointer over an element:
 * A define a tooltip with arrow point to the bottom :: /* At the top of the tooltip */
+* B mean image always fit 100% viewport ::  image to scale down if it has to, but never scale up to be larger than its original size, add the following:
+* We can't create image hover overlay :: ||LINK:https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade||
+* CSS can be used single hand to create image galleries :: ||LINK:https://www.w3schools.com/css/tryit.asp?filename=trycss_image_gallery_responsive||
+*= The CSS object-fit property is used to specify how an <img> or <video> should be resized to fit its container. like C
+
+What are true?
+||CODE:css:
+.button { //A
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+||
+*= A is to style a button 
+*= CSS can be use to create disabled button, Shadow Buttons, Button Groups.
+* Css cannot create animated button alone without javascript. :: wrong, can create arrow on hover, Fade in on hover, press on clicked, ripple
+*= If you have a website with lots of pages, you may wish to add some sort of pagination to each page :: pagination support Active and Hoverable Pagination, Transition Effect
+* Breadcrumbs is a deprecated feature of css :: Another variation of pagination is so-called "breadcrumbs" ||LINK:https://www.w3schools.com/css/tryit.asp?filename=trycss_breadcrumbs||
+
+What are true?
+||CODE:css:
+div { //A
+  resize: horizontal;
+  overflow: auto;
+}
+:root { //B
+  --main-bg-color: coral;
+}
+#div1 {
+  background-color: var(--main-bg-color);
+}
+#div2 {
+  background-color: var(--main-bg-color);
+}
+//C
+\* {
+  box-sizing: border-box;
+}
+
+||
+*= The CSS multi-column layout allows easy definition of multiple columns of text - just like in newspapers:
+*= The column-count property specifies the number of columns an element should be divided into.
+* The column-rule property is a shorthand property sets the  style, width and color :: sets the width, style, and color of the rule between columns:
+*= The resize property specifies if (and how) an element should be resizable by the user.
+* A mean allow user resize vertically.
+* In many browsers, <textarea> is not resizable by default.
+*= The outline-offset property adds space between an outline and the edge or border of an element.
+* Outline are borders! :: Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content.
+*=The var() function can be used to insert the value of a custom property like B 
+*= The CSS box-sizing property allows us to include the padding and border in an element's total width and height. :: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).
+* C is a bad global practice :: div size will be different if you dont have this
