@@ -969,7 +969,6 @@ div { //A
 \* {
   box-sizing: border-box;
 }
-
 ||
 *= The CSS multi-column layout allows easy definition of multiple columns of text - just like in newspapers:
 *= The column-count property specifies the number of columns an element should be divided into.
@@ -982,3 +981,105 @@ div { //A
 *=The var() function can be used to insert the value of a custom property like B 
 *= The CSS box-sizing property allows us to include the padding and border in an element's total width and height. :: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).
 * C is a bad global practice :: div size will be different if you dont have this
+
+what are true
+||CODE:css:
+//A
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+||
+*= A defined a flex container
+* A Flexible Layout not require a parent element with the display property set to flex. :: A Flexible Layout must have a parent element with the display property set to flex.
+*= we can set flex direction, order, justify content
+* flex cannot wrap
+*=  flex-flow property is a shorthand property for the flex-direction and the flex-wrap properties.
+* flex cannot align content at the begin or end 
+*= flex can  align the flex items or stretch
+*= flex can adjust space around or stretch
+*= flex can be put at start or end of container
+* all child elements of a flex container automatically becomes flexible (flex) items :: The direct child elements of a flex container automatically becomes flexible (flex) items
+*= we can adjust flex item order, glow or shrink relative
+*= flex-basis property specifies the initial length of a flex item
+*= flex align-self  Overrides the container's align-items property
+
+
+what are true
+||CODE:css:
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+//B
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Create four equal columns */
+.column {
+  flex: 25%;
+  padding: 20px;
+}
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+//C
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Create four equal columns */
+.column {
+  flex: 25%;
+  padding: 20px;
+}
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+//D
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+//E
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+||
+*= media query by width only available on css 3
+*= B and C are how to Responsive width, C are recommended
+* css cannot detect orientation :: wrong 
+*= HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+*= A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.
+*= always designing for desktop first::Mobile First means designing for mobile before designing for desktop or any other device (This will make the page display faster on smaller devices).
+*= E is breakpoint for target device
+*= You can use the media query min-device-width, instead of min-width, which checks the device width, instead of the browser width. Then the image will not change when you resize the browser window
+*= HTML5 introduced the <picture> element, which lets you define more than one image.
+*If the width property is set to 100%, the video player will scale down if it has to, but never scale up to be larger than its original size: ::If the max-width property is set to 100%, the video player will scale down if it has to, but never scale up to be larger than its original size
